@@ -9,47 +9,11 @@ const vscode = require('vscode');
  * }
  */
 module.exports.macroCommands = {
-  FooMacro: {
-    no: 2,
-    func: fooFunc
-  },
-  BarMacro: {
-    no: 1,
-    func: barFunc
-  },
   TestMacro: {
-    no: 3,
+    no: 1,
     func: testFunc
   }
 };
-
-/**
- * FooMacro
- */
-function fooFunc() {
-   const editor = vscode.window.activeTextEditor;
-   if (!editor) {
-      // Return an error message if necessary.
-      return 'Editor is not opening.';
-   }
-   const document = editor.document;
-   const selection = editor.selection;
-   const text = document.getText(selection);
-   if (text.length > 0) {
-      editor.edit(editBuilder => {
-         // To surround a selected text in double quotes(Multi selection is not supported).
-         editBuilder.replace(selection, `"${text}"`);
-      });
-   }
-}
-
-/**
- * BarMacro(asynchronous)
- */
-async function barFunc() {
-  await vscode.window.showInformationMessage('Hello VSCode Macros!');
-  // Returns nothing when successful.
-}
 
 /**
  * TestMacro(asynchronous)
@@ -117,19 +81,4 @@ async function testFunc() {
       }
     );
   }
-                  
-  //vscode.window.showInformationMessage(datetime.toString());
-  // if ((Check1 == true) & (Check2 == true))
-  // vscode.window.showInformationMessage("Check 1 & 2 PASS");
-  // else if (!Check1)
-  // vscode.window.showInformationMessage("Check1 fail, " + (selStartLine-1) + ", " + StartLinePre);
-  // else if (!Check2)
-  // vscode.window.showInformationMessage("Check2 fail, " + "GetLine:" + (selEndLine+1) + "," + "GetText:" + EndLineNext);
-
-  //await vscode.window.showInformationMessage("Start = ", selStartLine.toString(), '\n', "End = ", selEndLine.toString());
-  //let activeEditor = vscode.window.activeTextEditor;
-  //let document = activeEditor.document;
-  //let curPos = activeEditor.selection.active;
-  //let offset = document.offsetAt(curPos);
-  //await vscode.window.showInformationMessage(offset);
 }

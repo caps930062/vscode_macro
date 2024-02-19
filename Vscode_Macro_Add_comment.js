@@ -85,13 +85,13 @@ async function testFunc() {
   //vscode.window.showInformationMessage (EditDoc.languageId);
   if (languageId == 'c' || languageId == 'cpp' || languageId == 'javascript')
   {
-    var InsertTopString = "//[-start-" + datetime + "-IB18780000_test-add]//";
-    var InsertButtonString = "//[-End-" + datetime + "-IB18780000_test-add]//";
+    var InsertTopString = "//[-start-" + datetime + "test-add]//";
+    var InsertButtonString = "//[-End-" + datetime + "test-add]//";
   }
   if (languageId == 'edk2_dec' || languageId == 'edk2_dsc' || languageId == 'edk2_fdf' || languageId == 'edk2_inf')
   {
-    var InsertButtonString = "#[-start-" + datetime + "-IB18780000_test-add]#";
-    var InsertButtonString = "#[-end-" + datetime + "-IB18780000_test-add]#";
+    var InsertButtonString = "#[-start-" + datetime + "test-add]#";
+    var InsertButtonString = "#[-end-" + datetime + "test-add]#";
   }
 
   // check the selected scope has been comment out or not. 

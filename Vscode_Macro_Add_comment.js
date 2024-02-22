@@ -47,14 +47,14 @@ async function testFunc() {
 
   // get current file type
   //vscode.window.showInformationMessage (EditDoc.languageId);
-  if (languageId == 'c' || languageId == 'cpp' || languageId == 'javascript')
+  if (languageId == 'c' || languageId == 'cpp' || languageId == 'javascript' || languageId == 'asl')
   {
-    var InsertTopString = "//[-start-" + datetime + "test-add]//";
+    var InsertTopString    = "//[-start-" + datetime + "test-add]//";
     var InsertButtonString = "//[-End-" + datetime + "test-add]//";
   }
   if (languageId == 'edk2_dec' || languageId == 'edk2_dsc' || languageId == 'edk2_fdf' || languageId == 'edk2_inf')
   {
-    var InsertButtonString = "#[-start-" + datetime + "test-add]#";
+    var InsertTopString    = "#[-start-" + datetime + "test-add]#";
     var InsertButtonString = "#[-end-" + datetime + "test-add]#";
   }
 
